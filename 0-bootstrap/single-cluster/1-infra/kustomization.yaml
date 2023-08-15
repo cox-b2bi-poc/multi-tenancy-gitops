@@ -41,7 +41,7 @@ resources:
 #- argocd/namespace-ssp.yaml
 #- argocd/serviceaccounts-pem.yaml
 #- argocd/serviceaccounts-sccm.yaml
-# - argocd/sfg-b2bi-clusterwide.yaml
+- argocd/sfg-b2bi-clusterwide.yaml
 #- argocd/pem-b2bi-clusterwide.yaml
 #- argocd/sccm-clusterwide.yaml
 #- argocd/scc-wkc-iis.yaml
