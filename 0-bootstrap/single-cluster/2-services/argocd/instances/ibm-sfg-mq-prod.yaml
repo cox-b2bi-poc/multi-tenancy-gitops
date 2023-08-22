@@ -34,7 +34,8 @@ spec:
           image:
             repository: ibmcom/mq
             pullPolicy: IfNotPresent
-          storageClassName: ocs-storagecluster-cephfs
+          storageClassName: ibmc-block-gold
+          #storageClassName: ocs-storagecluster-cephfs
   syncPolicy:
     automated:
       prune: true
