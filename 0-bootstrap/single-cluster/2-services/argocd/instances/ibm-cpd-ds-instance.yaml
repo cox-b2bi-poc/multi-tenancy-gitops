@@ -32,4 +32,4 @@ spec:
       - name: spec.version
         value: 4.0.9
       - name: spec.storageClass
-        value: managed-nfs-storage
+        value: ocs-storagecluster-cephfs

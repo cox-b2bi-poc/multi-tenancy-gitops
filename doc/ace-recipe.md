@@ -13,10 +13,10 @@
     - argocd/namespace-tools.yaml
     ```
 ### Services - Kustomization.yaml
-1. Edit the Platform Navigator instance and specify a storage class that supports ReadWriteMany (RWX) `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-platform-navigator-instance.yaml`.  The default is set to `managed-nfs-storage`.
+1. Edit the Platform Navigator instance and specify a storage class that supports ReadWriteMany (RWX) `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-platform-navigator-instance.yaml`.  The default is set to `ocs-storagecluster-cephfs`.
     ```yaml
     storage:
-        class: managed-nfs-storage
+        class: ocs-storagecluster-cephfs
     ```
 
 1. Edit the Services layer `${GITOPS_PROFILE}/2-services/kustomization.yaml` uncomment the following:

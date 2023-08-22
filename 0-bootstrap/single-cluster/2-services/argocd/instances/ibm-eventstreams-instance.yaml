@@ -78,7 +78,7 @@ spec:
                   storage:
                     type: persistent-claim
                     size: 4Gi
-                    class: managed-nfs-storage
+                    class: ocs-storagecluster-cephfs
                 zookeeper:
                   replicas: 3
                   metricsConfig:
@@ -90,7 +90,7 @@ spec:
                   storage:
                     type: persistent-claim
                     size: 2Gi
-                    class: managed-nfs-storage
+                    class: ocs-storagecluster-cephfs
               requestIbmServices:
                 iam: true
                 monitoring: true

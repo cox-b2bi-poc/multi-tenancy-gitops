@@ -662,7 +662,7 @@ print_urls_passwords () {
 
 # Note: The Openshift Storage Class needs to be set for different cloud providors coupled with CP4x System Requirements
 set_rwx_storage_class () {
-  DEFAULT_RWX_STORAGE_CLASS=${DEFAULT_RWX_STORAGE_CLASS:-managed-nfs-storage}
+  DEFAULT_RWX_STORAGE_CLASS=${DEFAULT_RWX_STORAGE_CLASS:-ocs-storagecluster-cephfs}
   #OCS_RWX_STORAGE_CLASS=${OCS_RWX_STORAGE_CLASS:-ocs-storagecluster-cephfs}
   #OCS_RWX_STORAGE_CLASS=${OCS_RWX_STORAGE_CLASS:-ocs-storagecluster-ceph-rbd}
   OCS_RWX_STORAGE_CLASS=${OCS_RWX_STORAGE_CLASS:-thin}

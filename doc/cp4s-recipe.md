@@ -12,12 +12,12 @@
     - argocd/namespace-knative-serving-ingress.yaml
     ```
 ### Services - Kustomization.yaml
-1. Edit the **CP4SThreatManagement**s custom resource instance and specify a block or file storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cp4sthreatmanagements-instance.yaml`.  The default is set to `managed-nfs-storage`.
+1. Edit the **CP4SThreatManagement**s custom resource instance and specify a block or file storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cp4sthreatmanagements-instance.yaml`.  The default is set to `ocs-storagecluster-cephfs`.
     ```yaml
       - name: spec.basicDeploymentConfiguration.storageClass
-        value: managed-nfs-storage
+        value: ocs-storagecluster-cephfs
       - name: spec.extendedDeploymentConfiguration.backupStorageClass
-        value: managed-nfs-storage
+        value: ocs-storagecluster-cephfs
     ```
 
 1. Edit the Services layer `${GITOPS_PROFILE}/2-services/kustomization.yaml` uncomment the following:

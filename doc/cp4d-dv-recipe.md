@@ -11,16 +11,16 @@
     - argocd/norootsquash.yaml
     ```
 ### Services - Kustomization.yaml
-1. Edit the Cloud Pak for Data Platform instance and update the storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cpd-instance.yaml` as needed.  The default is set to `managed-nfs-storage`.
+1. Edit the Cloud Pak for Data Platform instance and update the storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cpd-instance.yaml` as needed.  The default is set to `ocs-storagecluster-cephfs`.
     ```yaml
       - name: spec.storageClass
-        value: "managed-nfs-storage"
+        value: "ocs-storagecluster-cephfs"
     ```
 
-1. Edit the Data Virtualization instance and update the storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cpd-dv-instance.yaml` as needed.  The default is set to `managed-nfs-storage`.
+1. Edit the Data Virtualization instance and update the storage class `${GITOPS_PROFILE}/2-services/argocd/instances/ibm-cpd-dv-instance.yaml` as needed.  The default is set to `ocs-storagecluster-cephfs`.
     ```yaml
       - name: spec.storageClass
-        value: managed-nfs-storage
+        value: ocs-storagecluster-cephfs
     ```
 
 1. Edit the Services layer `${GITOPS_PROFILE}/2-services/kustomization.yaml` uncomment the following:

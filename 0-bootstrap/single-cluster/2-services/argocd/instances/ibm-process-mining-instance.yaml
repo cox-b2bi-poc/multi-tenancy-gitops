@@ -27,7 +27,7 @@ spec:
           ibmprocessmininginstance:
             name: processmining
             spec:
-              defaultStorageClassName: managed-nfs-storage
+              defaultStorageClassName: ocs-storagecluster-cephfs
               license:
                 accept: true
                 cloudPak: IBM Cloud Pak for Business Automation

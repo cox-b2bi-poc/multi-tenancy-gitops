@@ -26,9 +26,9 @@ This recipe is for deploying the B2BI Sterling File Gateway in a single namespac
 
     | Component | Access Mode | IBM Cloud | OCS/ODF |
     | --- | --- | --- | --- |
-    | DB2 | RWO | ibmc-block-gold | ocs-storagecluster-cephfs |
-    | MQ | RWO | ibmc-block-gold | ocs-storagecluster-cephfs |
-    | SFG | RWX | managed-nfs-storage | ocs-storagecluster-cephfs |
+    | DB2 | RWO | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
+    | MQ | RWO | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
+    | SFG | RWX | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
 
 1. Edit the Services layer `${GITOPS_PROFILE}/2-services/kustomization.yaml` and install Sealed Secrets by uncommenting the following line, **commit** and **push** the changes and refresh the `services` Application in the ArgoCD console.
     ```yaml
@@ -60,7 +60,7 @@ This recipe is for deploying the B2BI Sterling File Gateway in a single namespac
         ./sfg-b2bi-secrets.sh
         ```
 
-    1. Generate Persistent Volume Yamls required by Sterling File Gateway (the default is set in RWX_STORAGECLASS environment variable to `managed-nfs-storage` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`)
+    1. Generate Persistent Volume Yamls required by Sterling File Gateway (the default is set in RWX_STORAGECLASS environment variable to `ocs-storagecluster-cephfs` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`)
 
         ```bash
         ./sfg-b2bi-pvc-mods.sh
@@ -88,7 +88,7 @@ This recipe is for deploying the B2BI Sterling File Gateway in a single namespac
     > Make sure that the sterling toolkit pod does not throw any error.
     > Wait for 5 minutes until the database is fully initialized. 
    
-1. Generate Helm Chart values.yaml for the Sterling File Gateway Helm Chart in the `multi-tenancy-gitops-services` repo; note that the default storage class is using `managed-nfs-storage` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`.
+1. Generate Helm Chart values.yaml for the Sterling File Gateway Helm Chart in the `multi-tenancy-gitops-services` repo; note that the default storage class is using `ocs-storagecluster-cephfs` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`.
 
     ```
     cd multi-tenancy-gitops-services/instances/ibm-sfg-b2bi-prod

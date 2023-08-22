@@ -32,7 +32,7 @@ spec:
           image:
             repository: ibmcom/db2:11.5.7.0
             pullPolicy: IfNotPresent
-          storageClassName: ibmc-block-gold
+          storageClassName: ocs-storagecluster-cephfs
           #storageClassName: ocs-storagecluster-cephfs
           createdb: |
             CREATE DATABASE PEMTEST AUTOMATIC STORAGE YES USING CODESET UTF-8 TERRITORY DEFAULT COLLATE USING IDENTITY PAGESIZE 4096;

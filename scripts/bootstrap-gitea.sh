@@ -419,7 +419,7 @@ print_urls_passwords () {
 
 get_rwx_storage_class () {
 
-  DEFAULT_RWX_STORAGE_CLASS=${DEFAULT_RWX_STORAGE_CLASS:-managed-nfs-storage}
+  DEFAULT_RWX_STORAGE_CLASS=${DEFAULT_RWX_STORAGE_CLASS:-ocs-storagecluster-cephfs}
   OCS_RWX_STORAGE_CLASS=${OCS_RWX_STORAGE_CLASS:-ocs-storagecluster-cephfs}
 
   if [[ -n "${RWX_STORAGE_CLASS}" ]]; then
@@ -441,7 +441,7 @@ get_rwx_storage_class () {
 set_rwx_storage_class () {
 
   if [[ ${RWX_STORAGE_CLASS} = ${DEFAULT_RWX_STORAGE_CLASS} ]]; then
-    echo "Using default RWX storage managed-nfs-storage skipping override"
+    echo "Using default RWX storage ocs-storagecluster-cephfs skipping override"
     return 0
   fi
 

@@ -32,8 +32,8 @@ In particular, these infra resources are assumed to have already been deployed (
 
     | Component | Access Mode | IBM Cloud | OCS/ODF |
     | --- | --- | --- | --- |
-    | DB2 | RWO | ibmc-block-gold | ocs-storagecluster-cephfs |
-    | PEM | RWX | managed-nfs-storage | ocs-storagecluster-cephfs |
+    | DB2 | RWO | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
+    | PEM | RWX | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
 
 1. Clone the services repo for GitOps: open a terminal window and clone the `multi-tenancy-gitops-services` repository under your Git Organization.
         
@@ -112,7 +112,7 @@ In particular, these infra resources are assumed to have already been deployed (
 
 ### Services - instances folder (in **multi-tenancy-gitops-services** repository)
 
-1. Generate values.yaml file for the SCCM Helm Chart in the `multi-tenancy-gitops-services` repo; note that the default storage class is using `managed-nfs-storage` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`.:
+1. Generate values.yaml file for the SCCM Helm Chart in the `multi-tenancy-gitops-services` repo; note that the default storage class is using `ocs-storagecluster-cephfs` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`.:
     
     ```bash
     cd multi-tenancy-gitops-services/instances/ibm-sccm

@@ -24,8 +24,8 @@ This guide assumes that you already deploys and verifies the 2 instances of the 
 
     | Component | Access Mode | IBM Cloud | OCS/ODF |
     | --- | --- | --- | --- |
-    | DB2 | RWO | ibmc-block-gold | ocs-storagecluster-cephfs |
-    | PEM | RWX | managed-nfs-storage | ocs-storagecluster-cephfs |
+    | DB2 | RWO | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
+    | PEM | RWX | ocs-storagecluster-cephfs | ocs-storagecluster-cephfs |
 
 1. Clone the services repo for GitOps: open a terminal window and clone the `multi-tenancy-gitops-services` repository under your Git Organization.
         
@@ -50,7 +50,7 @@ This guide assumes that you already deploys and verifies the 2 instances of the 
         B2BI_PROD_DB_PASSWORD=db2inst1 \
         B2BI_NONPROD_PASSWORD=password \
         B2BI_NONPROD_DB_PASSWORD=db2inst1 \
-        RWX_STORAGECLASS=managed-nfs-storage \
+        RWX_STORAGECLASS=ocs-storagecluster-cephfs \
         ./pem-prereqs.sh
         ```
 
@@ -76,7 +76,7 @@ This guide assumes that you already deploys and verifies the 2 instances of the 
     > Make sure that the sterling toolkit pod does not throw any error.
     > Wait for 5-10 minutes until the database is fully initialized. 
    
-1. Generate Helm Chart values.yaml for the Partner Engagement Manager Helm Chart in the `multi-tenancy-gitops-services` repo; note that the default storage class is using `managed-nfs-storage` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`.
+1. Generate Helm Chart values.yaml for the Partner Engagement Manager Helm Chart in the `multi-tenancy-gitops-services` repo; note that the default storage class is using `ocs-storagecluster-cephfs` - if you are installing on ODF, set `RWX_STORAGECLASS=ocs-storagecluster-cephfs`.
 
     ```
     cd multi-tenancy-gitops-services/instances/ibm-pem
